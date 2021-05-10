@@ -13,12 +13,46 @@ public class User {
     private String username;
     //用户密码
     private String password;
+    //用户邮箱
+    private String email;
     //用户等级
-    private String level;
-    //经验条
+    private int level;
+    //经验值
     private int experience;
     //判断是否是管理员
-    private boolean isAdmin;
+    private int isAdmin;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", level=" + level +
+                ", experience=" + experience +
+                ", isAdmin=" + isAdmin +
+                '}';
+    }
+
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public double getExperience() {
         return experience;
@@ -26,14 +60,6 @@ public class User {
 
     public void setExperience(int experience) {
         this.experience = experience;
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
     }
 
     public int getId() {
@@ -60,37 +86,16 @@ public class User {
         this.password = password;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
     public User() {
 
-    }
-
-    public User(int id, String username, String password, String level, int experience, boolean isAdmin) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.level = level;
-        this.experience = experience;
-        this.isAdmin = isAdmin;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", level='" + level + '\'' +
-                ", experience=" + experience +
-                ", isAdmin=" + isAdmin +
-                '}';
     }
 
 }
