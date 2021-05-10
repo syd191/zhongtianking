@@ -36,4 +36,51 @@ public interface UserDao {
      **/
     public int saveUser(User user);
 
+    /**
+     * @param username
+     * @return int
+     * @author Xiaoyang
+     * @Description 通过id设置管理员权限
+     * @Date 9:06 2021/5/10
+     **/
+    public int becomeAdminById(String username);
+
+    /**
+     * @param username
+     * @return int
+     * @author Xiaoyang
+     * @Description 通过id删除用户
+     * @Date 9:09 2021/5/10
+     **/
+    public int delectUserByUsername(String username);
+
+    /**
+     * @param username
+     * @param newUsername
+     * @return int
+     * @author Xiaoyang
+     * @Description 修改用户名称
+     * @Date 9:22 2021/5/10
+     **/
+    public int changeUserNameByUsername(String username, String newUsername);
+
+    /**
+     * @param username
+     * @param newPassword
+     * @return int
+     * @author Xiaoyang
+     * @Description 更改密码
+     * @Date 9:41 2021/5/10
+     **/
+    public int changePasswordByUsername(String username, String newPassword);
+
+    /**
+     * @param username
+     * @param newEmail
+     * @return int
+     * @author Xiaoyang
+     * @Description 更改邮箱
+     * @Date 9:44 2021/5/10
+     **/
+    public int changeEmailByUsername(String username, String newEmail);
 }

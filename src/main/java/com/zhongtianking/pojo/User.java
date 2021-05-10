@@ -15,26 +15,25 @@ public class User {
     private String password;
     //用户等级
     private String level;
+    //经验条
+    private int experience;
+    //判断是否是管理员
+    private boolean isAdmin;
 
-    public User() {
-
+    public double getExperience() {
+        return experience;
     }
 
-    @Override
-    public String toString() {
-        return "UserBean{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", level='" + level + '\'' +
-                '}';
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
-    public User(int id, String username, String password, String level) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.level = level;
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     public int getId() {
@@ -61,7 +60,6 @@ public class User {
         this.password = password;
     }
 
-
     public String getLevel() {
         return level;
     }
@@ -69,6 +67,32 @@ public class User {
     public void setLevel(String level) {
         this.level = level;
     }
+
+    public User() {
+
+    }
+
+    public User(int id, String username, String password, String level, int experience, boolean isAdmin) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.level = level;
+        this.experience = experience;
+        this.isAdmin = isAdmin;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", level='" + level + '\'' +
+                ", experience=" + experience +
+                ", isAdmin=" + isAdmin +
+                '}';
+    }
+
 }
 
 

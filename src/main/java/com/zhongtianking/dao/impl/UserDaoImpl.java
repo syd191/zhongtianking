@@ -48,4 +48,66 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         }
         return update(conn, sql, user.getUsername(), user.getPassword(), user.getLevel());
     }
+
+    @Override
+    public int becomeAdminById(String username) {
+        String sql ="UPDATE t_user SET isAdmin = 'ture' WHERE username = ?";
+        Connection conn= null;
+        try {
+            conn = JDBCUtils.getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return update(conn,sql,username);
+    }
+
+    @Override
+    public int delectUserByUsername(String username) {
+        String sql ="DELETE FROM t_user WHERE username = ?";
+        Connection conn= null;
+        try {
+            conn = JDBCUtils.getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return update(conn,sql,username);
+    }
+
+    @Override
+    public int changeUserNameByUsername(String username,String newUsername) {
+
+        String sql="UPDATE t_user SET username = '?' WHERE username = ?";
+        Connection conn= null;
+        try {
+            conn = JDBCUtils.getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return update(conn,sql,newUsername,username);
+    }
+
+    @Override
+    public int changePasswordByUsername(String username,String newPassword) {
+        String sql="UPDATE t_user SET password = '?' WHERE username = ?";
+        Connection conn= null;
+        try {
+            conn = JDBCUtils.getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return update(conn,sql,newPassword,username);
+    }
+
+    @Override
+    public int changeEmailByUsername(String username, String newEmail) {
+        String sql="UPDATE t_user SET email = '?' WHERE username = ?";
+        Connection conn= null;
+        try {
+            conn = JDBCUtils.getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return update(conn,sql,newEmail,username);
+    }
+
 }
