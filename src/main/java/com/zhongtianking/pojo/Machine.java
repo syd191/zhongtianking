@@ -8,18 +8,21 @@ package com.zhongtianking.pojo;
 public class Machine {
     //机械id
     private int id;
+    //板块id
+    private int sectorId;
     //机械介绍
     private String introduction;
-    //机械分类
-    private String sort;
+    //机械信息缩略图地址
+    private String msgUrl;
 
     public Machine() {
     }
 
-    public Machine(int id, String introduction, String sort) {
+    public Machine(int id, int sectorId, String introduction, String msgUrl) {
         this.id = id;
+        this.sectorId = sectorId;
         this.introduction = introduction;
-        this.sort = sort;
+        this.msgUrl = msgUrl;
     }
 
     public int getId() {
@@ -30,6 +33,14 @@ public class Machine {
         this.id = id;
     }
 
+    public int getSectorId() {
+        return sectorId;
+    }
+
+    public void setSectorId(int sectorId) {
+        this.sectorId = sectorId;
+    }
+
     public String getIntroduction() {
         return introduction;
     }
@@ -38,20 +49,21 @@ public class Machine {
         this.introduction = introduction;
     }
 
-    public String getSort() {
-        return sort;
+    public String getMsgUrl() {
+        return msgUrl;
     }
 
-    public void setSort(String sort) {
-        this.sort = sort;
+    public void setMsgUrl(String msgUrl) {
+        this.msgUrl = msgUrl;
     }
 
     @Override
     public String toString() {
-        return "MachineBean{" +
+        return "Machine{" +
                 "id=" + id +
+                ", sectorId=" + sectorId +
                 ", introduction='" + introduction + '\'' +
-                ", sort='" + sort + '\'' +
+                ", msgUrl='" + msgUrl + '\'' +
                 '}';
     }
 }
