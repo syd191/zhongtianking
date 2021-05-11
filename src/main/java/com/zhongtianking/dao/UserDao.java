@@ -2,6 +2,8 @@ package com.zhongtianking.dao;
 
 import com.zhongtianking.pojo.User;
 
+import java.sql.Connection;
+
 /**
  * @author xiaoyang
  * @Description

@@ -18,7 +18,7 @@ public class UserDaoImplTest {
     @Test
     public void queryUserByUsername() {
         UserDao dao = new UserDaoImpl();
-        User admin = dao.queryUserByUsername("Admin");
+        User admin = dao.queryUserByUsername("Admin1");
         System.out.println(admin);
 
     }
