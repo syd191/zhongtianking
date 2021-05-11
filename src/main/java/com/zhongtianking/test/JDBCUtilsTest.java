@@ -19,6 +19,7 @@ public class JDBCUtilsTest {
     public void getConnection() throws SQLException {
         Connection conn=JDBCUtils.getConnection();
         System.out.println(conn);
+        System.out.println(conn.getTransactionIsolation());
         DbUtils.closeQuietly(conn);
     }
 
