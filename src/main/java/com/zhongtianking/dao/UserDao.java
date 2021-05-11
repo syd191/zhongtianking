@@ -43,7 +43,7 @@ public interface UserDao {
      * @Description 通过id设置管理员权限
      * @Date 9:06 2021/5/10
      **/
-    public int becomeAdminById(String username);
+    public int becomeAdminByUsername(String username);
 
     /**
      * @param username

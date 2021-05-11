@@ -39,19 +39,19 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public int saveUser(User user) {
-        String sql = "insert into t_user('username','password','level') values(?,?,?)";
+        String sql = "INSERT INTO t_user (username, password,email) VALUES (?,?,?)";
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return update(conn, sql, user.getUsername(), user.getPassword(), user.getLevel());
+        return update(conn, sql, user.getUsername(), user.getPassword(), user.getEmail());
     }
 
     @Override
-    public int becomeAdminById(String username) {
-        String sql ="UPDATE t_user SET isAdmin = 'ture' WHERE username = ?";
+    public int becomeAdminByUsername(String username) {
+        String sql ="UPDATE t_user SET isAdmin = '1' WHERE username = ?";
         Connection conn= null;
         try {
             conn = JDBCUtils.getConnection();
@@ -76,7 +76,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public int changeUserNameByUsername(String username,String newUsername) {
 
-        String sql="UPDATE t_user SET username = '?' WHERE username = ?";
+        String sql="UPDATE t_user SET username = ? WHERE username = ?";
         Connection conn= null;
         try {
             conn = JDBCUtils.getConnection();
@@ -88,7 +88,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public int changePasswordByUsername(String username,String newPassword) {
-        String sql="UPDATE t_user SET password = '?' WHERE username = ?";
+        String sql="UPDATE t_user SET password = ? WHERE username = ?";
         Connection conn= null;
         try {
             conn = JDBCUtils.getConnection();
@@ -100,7 +100,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public int changeEmailByUsername(String username, String newEmail) {
-        String sql="UPDATE t_user SET email = '?' WHERE username = ?";
+        String sql="UPDATE t_user SET email = ? WHERE username = ?";
         Connection conn= null;
         try {
             conn = JDBCUtils.getConnection();

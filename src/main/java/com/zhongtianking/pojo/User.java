@@ -22,6 +22,16 @@ public class User {
     //判断是否是管理员
     private int isAdmin;
 
+    public User(String username, String password, String email, int level, int experience, int isAdmin) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.level = level;
+        this.experience = experience;
+        this.isAdmin = isAdmin;
+    }
+
     @Override
     public String toString() {
         return "User{" +
